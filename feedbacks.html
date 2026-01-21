@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Feedback</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+    }
+    th {
+      background: green;
+      color: white;
+    }
+    h1 { text-align: center; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>All Customer Feedback</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="order.html">Order</a>
+    <a href="feedback.html">Give Feedback</a>
+    <a href="feedbacks.html">View Feedback</a>
+  </nav>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Feedback</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody id="feedbackTable"></tbody>
+</table>
+
+<script>
+fetch("http://localhost:5000/getFeedback")
+  .then(res => res.json())
+  .then(data => {
+    let table = document.getElementById("feedbackTable");
+    data.forEach(fb => {
+      table.innerHTML += `
+        <tr>
+          <td>${fb.name}</td>
+          <td>${fb.feedback}</td>
+          <td>${fb.time}</td>
+        </tr>`;
+    });
+  });
+</script>
+
+</body>
+</html>
+
+

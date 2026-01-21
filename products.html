@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Our Products</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="order.html">Order</a>
+    <a href="feedback.html">Give Feedback</a>
+    <a href="feedbacks.html">View Feedback</a>
+  </nav>
+</header>
+
+<section>
+  <div class="product">
+    <h3>Organic Apples</h3>
+    <p>$5</p>
+    <button onclick="addToCart('Organic Apples', 5)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3>Fresh Carrots</h3>
+    <p>$3</p>
+    <button onclick="addToCart('Fresh Carrots', 3)">Add to Cart</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
